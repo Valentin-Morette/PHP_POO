@@ -22,6 +22,15 @@ var_dump($motor);
 var_dump($pedestrian);
 var_dump($resident);
 
+try {
+  echo $car->forward();
+} catch (Exception $e) {
+  $car->setParkBrake();
+  echo 'frein à main retiré';
+} finally {
+  echo 'Ma voiture roule comme un donut';
+}
+
 var_dump(Truck::ALLOWED_ENERGIES);
 
 echo $bicycle->forward();
