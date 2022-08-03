@@ -1,8 +1,9 @@
 <?php
 
 require_once 'Vehicle.php';
+require_once 'LightableInterface.php';
 
-class Truck extends Vehicle
+class Truck extends Vehicle implements LightableInterface
 {
   public const ALLOWED_ENERGIES = ['fuel', 'electric'];
 
@@ -74,5 +75,15 @@ class Truck extends Vehicle
     } else {
       return 'in filling';
     }
+  }
+
+  public function switchOn()
+  {
+    return true;
+  }
+
+  public function switchOff()
+  {
+    return false;
   }
 }

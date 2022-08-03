@@ -4,7 +4,7 @@ abstract class Vehicle
 {
   protected string $color;
 
-  protected int $currentSpeed;
+  protected int $currentSpeed = 0;
 
   protected int $nbSeats;
 

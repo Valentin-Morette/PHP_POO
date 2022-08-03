@@ -3,12 +3,15 @@
 require 'Car.php';
 require 'Bicycle.php';
 require 'Truck.php';
+require 'SkateBoard.php';
 require 'MotorWay.php';
 require 'PedestrianWay.php';
 require 'ResidentialWay.php';
+
 $motor = new MotorWay();
 $pedestrian = new PedestrianWay();
 $resident = new ResidentialWay();
+$skate = new SkateBoard('green', 1);
 $bicycle = new Bicycle('blue', 1);
 $car = new Car('green', 4, 'electric');
 $truck = new Truck('black', 3, 'fuel', 5000);
@@ -27,15 +30,30 @@ try {
 } catch (Exception $e) {
   $car->setParkBrake();
   echo 'frein à main retiré';
+  echo '</br>';
 } finally {
   echo 'Ma voiture roule comme un donut';
 }
 
 var_dump(Truck::ALLOWED_ENERGIES);
 
+if ($bicycle->switchOn()) {
+  echo 'allumé';
+} else {
+  echo 'éteint';
+}
+
+echo '</br>';
 echo $bicycle->forward();
 var_dump($bicycle);
 
+if ($bicycle->switchOn()) {
+  echo 'allumé';
+} else {
+  echo 'éteint';
+}
+
+echo '</br>';
 echo $car->forward();
 var_dump($car);
 
