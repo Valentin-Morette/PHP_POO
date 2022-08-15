@@ -7,6 +7,7 @@ require 'SkateBoard.php';
 require 'MotorWay.php';
 require 'PedestrianWay.php';
 require 'ResidentialWay.php';
+require 'Speedometer.php';
 
 $motor = new MotorWay();
 $pedestrian = new PedestrianWay();
@@ -65,4 +66,7 @@ $truck->setStorage(5000);
 echo $truck->lookFull() . '</br>' . '</br>';
 echo $truck->getCurrentSpeed() . '</br>';
 echo $truck->brake() . '</br>';
-echo $truck->getCurrentSpeed();
+echo $truck->getCurrentSpeed() . '</br>';
+
+echo Speedometer::milesIntoKm(7) . '</br>';
+echo Speedometer::kmIntoMiles(7);
